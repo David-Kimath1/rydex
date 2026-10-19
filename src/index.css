@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-tap-highlight-color: transparent; }
+  body {
+    @apply bg-ink text-white antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+  :focus-visible { @apply outline-none ring-2 ring-lime ring-offset-2 ring-offset-ink; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+}
+
+/* Leaflet dark fix */
+.leaflet-container { background: #0B0B0B; font-family: inherit; }
+.leaflet-tile { filter: brightness(0.7) invert(1) contrast(0.9) hue-rotate(180deg) saturate(0.4); }
+.leaflet-control-attribution { background: rgba(11,11,11,0.8) !important; color: #767676 !important; font-size: 10px; }
+.leaflet-control-attribution a { color: #B7F34A !important; }
