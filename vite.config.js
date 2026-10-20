@@ -30,7 +30,7 @@ export default defineConfig({
         navigateFallbackDenylist: [/^\/api/],
         runtimeCaching: [
           {
-            urlPattern: /^https:\/\/\{s\}\.tile\.openstreetmap\.org\/.*/i,
+            urlPattern: /^https:\/\/.*\.tile\.openstreetmap\.org\/.*/i,
             handler: "CacheFirst",
             options: {
               cacheName: "osm-tiles",
@@ -41,4 +41,10 @@ export default defineConfig({
       },
     }),
   ],
+  server: {
+    port: 6173, // Dev server port
+  },
+  preview: {
+    port: 6173, // Preview server port
+  },
 });

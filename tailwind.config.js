@@ -13,6 +13,7 @@ export default {
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
+        brand: ["Gabriela", "serif"],
       },
       borderRadius: {
         xl: "1rem",
