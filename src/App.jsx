@@ -44,8 +44,8 @@ export default function App() {
         <Route element={<MainLayout />}>
           {import.meta.env.DEV && <Route path="/dev/panels" element={<RolePanelPreview />} />}
           <Route path="/" element={<CustomerDashboard />} />
+          <Route path="/book" element={<Home />} />
           <Route element={<RequireAuth />}>
-            <Route path="/book" element={<RequireRole roles={["customer"]}><Home /></RequireRole>} />
             <Route path="/activity" element={<RequireRole roles={["customer"]}><Activity /></RequireRole>} />
             <Route path="/profile" element={<RequireRole roles={["customer"]}><Profile /></RequireRole>} />
             <Route path="/portal" element={<CustomerPortal />} />
